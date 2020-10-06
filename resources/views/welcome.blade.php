@@ -67,6 +67,7 @@
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
+                    <a href="{{ route('customers') }}">Customers</a>
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
@@ -81,7 +82,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    LaravelVueDataViewer
                 </div>
 
                 <div class="links">
