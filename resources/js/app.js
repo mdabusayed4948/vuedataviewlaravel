@@ -6,7 +6,24 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
+// window.Vue = require('vue'); //old formate
+import Vue from 'vue';
+import VueProgressBar from 'vue-progressbar'
+const VueProgressBaroptions = {
+    color: '#50d38a',
+    failedColor: '#874b4b',
+    thickness: '5px',
+    transition: {
+        speed: '0.2s',
+        opacity: '0.6s',
+        termination: 300
+    },
+    autoRevert: true,
+    location: 'top',
+    inverse: false
+}
+
+Vue.use(VueProgressBar, VueProgressBaroptions);
 
 /**
  * The following block of code may be used to automatically register your
@@ -20,7 +37,7 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('customer-component', require('./components/CustomerComponent.vue').default);
-
+Vue.component('pagination', require('./components/partial/PaginationComponent').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
