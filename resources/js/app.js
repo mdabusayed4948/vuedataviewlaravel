@@ -8,7 +8,18 @@ require('./bootstrap');
 
 // window.Vue = require('vue'); //old formate
 import Vue from 'vue';
+import { Form, HasError, AlertError } from 'vform'
 import VueProgressBar from 'vue-progressbar'
+import Snotify, { SnotifyPosition } from 'vue-snotify'
+window.Form = Form
+const SnotifyOptions = {
+    toast: {
+        position: SnotifyPosition.rightTop
+    }
+}
+
+Vue.use(Snotify, SnotifyOptions)
+
 const VueProgressBaroptions = {
     color: '#50d38a',
     failedColor: '#874b4b',
@@ -43,6 +54,9 @@ Vue.component('pagination', require('./components/partial/PaginationComponent').
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
+Vue.component(HasError.name, HasError)
+Vue.component(AlertError.name, AlertError)
 
 const app = new Vue({
     el: '#app',

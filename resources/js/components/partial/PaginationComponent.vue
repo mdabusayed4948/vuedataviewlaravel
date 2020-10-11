@@ -1,6 +1,6 @@
 <template>
-    <nav aria-label="...">
-        <ul class="pagination justify-content-center">
+    <nav aria-label="..." >
+        <ul class="pagination justify-content-center" style="cursor: pointer">
             <li class="page-item" :class="{ disabled: pagination.current_page <= 1 }">
                 <a class="page-link" @click.prevent="changePage(1)"  >First page</a>
             </li>
